@@ -1,0 +1,20 @@
+@keyframes scroll-up {
+    from {top: 100vh;}
+    to {top: 0vh;}
+}
+
+#page-transition-container {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page-transition-sheet {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
