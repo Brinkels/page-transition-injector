@@ -1,2 +1,3 @@
 # page-transition-injector
-Library to generate 
+
+A library to generate page transitions painlessly.
