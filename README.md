@@ -8,7 +8,7 @@ A library to generate page transitions painlessly.
 2. Save /css/page-transition-injector.css and /js/page-transition-injector.js in your working directory
 3. Import them in your page's head
 4. Add a script tag at the end of your page's body
-```
+```HTML
 <script>
     PTI.init();
 </script>
@@ -38,7 +38,7 @@ Sheet objects are fairly simple, they only have one property
 - color: a string with a color value, usually hexadecimal, but you can use rgb functions, just remember not to put spaces in them.
 
 **Configuration object use example:**
-```
+```Js
     PTI.init({
         direction: 'down',
         sheets: [{
