@@ -3,6 +3,21 @@
     to {top: 0vh;}
 }
 
+@keyframes scroll-down {
+    from {top: -100vh;}
+    to {top: 0vh;}
+}
+
+@keyframes scroll-left {
+    from {left: 100vw;}
+    to {left: 0vw;}
+}
+
+@keyframes scroll-right {
+    from {left: -100vw;}
+    to {left: 0vw;}
+}
+
 #page-transition-container {
     max-width: 100vw;
     max-height: 100vh;
