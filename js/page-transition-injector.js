@@ -36,10 +36,6 @@ var PTI = {
 
                 var builtSheets = PTI.generateSheets(generatorSheets, element.getAttribute('data-pti-transition-time'));
 
-                if (builtSheets.length == 0) {
-                    window.location.href = location;
-                }
-
                 builtSheets.forEach(sheet => {
                     document.getElementById('page-transition-container').appendChild(sheet);
                 });
