@@ -4,10 +4,12 @@ A library to generate page transitions painlessly.
 
 # How to use
 ## Install the library in your project
-1. Download this repository using either Git or the download as zip button
-2. Save /css/page-transition-injector.css and /js/page-transition-injector.js in your working directory
-3. Import them in your page's head
-4. Add a script tag at the end of your page's body
+1. Download this repository using either Git or the download as zip button.
+2. Save /css/page-transition-injector.css and /js/page-transition-injector.js in your working directory.
+3. Import them in your page's head.
+5. Add the `page-transition` class to the elements you want the transition to trigger on.
+4. Add a script tag at the end of your page's body.
+
 ```HTML
 <script>
     PTI.init();
@@ -16,7 +18,7 @@ A library to generate page transitions painlessly.
 
 
 ## Use the library
-By default, PTI will use HTML data attributes to control its behaviour, you can change this by setting `PTI.options.generateSheetsPerElement` to `false`, or in the configuration object (more info below).
+By default, PTI will use HTML data attributes to control its behaviour, you can change this in the configuration object (more info below), or by setting `PTI.options.generateSheetsPerElement` to `false` in your script tag (not recommended).
 
 ### HTML Data attributes
 - data-pti-transition-time: Sets the amount of milliseconds to run the animation for.
@@ -26,7 +28,7 @@ By default, PTI will use HTML data attributes to control its behaviour, you can 
 ### The configuration object
 You can pass a configuration object to the init function when you initialise the library.
 
-This object's properties can be the following:
+This object's properties can be the following, although they are all optional:
 - direction: up, down, left or right.
 - sheets: An array of sheet objects (more below).
 - generateSheetsPerElement: A boolean value that toggles whether or not to listen to data attributes on HTML (If you set this to false you MUST specify at least one sheet object in the sheets property).
