@@ -3,7 +3,7 @@ var PTI = {
         generateSheetsPerElement: true
     },
     init: (options) => {
-        if (typeof options != 'undefined') PTI.options = options;
+        if (typeof options != 'undefined') PTI.options = {...PTI.options, ...options};
 
         //Init transition container
         var transitionContainer = document.createElement('div');
@@ -46,7 +46,7 @@ var PTI = {
         
                 setTimeout(() => {
                     window.location.href = location;
-                }, element.getAttribute('data-pti-transition-time') || 1000);
+                }, PTI.options.transitionTime ? PTI.options.transitionTime : element.getAttribute('data-pti-transition-time') || 1000);
             });
         });
     },
@@ -56,7 +56,7 @@ var PTI = {
         var builtSheets = [];
         var sheetCounter = 0;
         var sheetAmount = PTI.options.generateSheetsPerElement ? elementSheets.length : PTI.options.sheets.length;
-        var totalTransitionTime = PTI.options.generateSheetsPerElement ? transitionTime || 1000 : 1000;
+        var totalTransitionTime = PTI.options.transitionTime ? PTI.options.transitionTime : transitionTime || 1000;
         var timePerSheet = totalTransitionTime / sheetAmount;
 
         var sheets = PTI.options.generateSheetsPerElement ? elementSheets : PTI.options.sheets;
