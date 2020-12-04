@@ -6,7 +6,6 @@ var PTI = {
         skewX: 0,
         skewY: 0
     },
-    skewed: false,
     init: (options) => {
         if (typeof options != 'undefined') PTI.options = {...PTI.options, ...options};
 
