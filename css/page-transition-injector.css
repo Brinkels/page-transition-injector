@@ -1,20 +1,20 @@
 @keyframes scroll-up {
-    from {top: 100vh;}
+    from {top: 200vh;}
     to {top: 0vh;}
 }
 
 @keyframes scroll-down {
-    from {top: -100vh;}
+    from {top: -200vh;}
     to {top: 0vh;}
 }
 
 @keyframes scroll-left {
-    from {left: 100vw;}
+    from {left: 200vw;}
     to {left: 0vw;}
 }
 
 @keyframes scroll-right {
-    from {left: -100vw;}
+    from {left: -200vw;}
     to {left: 0vw;}
 }
 

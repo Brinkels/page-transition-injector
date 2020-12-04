@@ -2,8 +2,11 @@ var PTI = {
     options: {
         generateSheetsPerElement: true,
         transitionTime: 1000,
-        direction: 'right'
+        direction: 'right',
+        skewX: 0,
+        skewY: 0
     },
+    skewed: false,
     init: (options) => {
         if (typeof options != 'undefined') PTI.options = {...PTI.options, ...options};
 
@@ -61,6 +64,8 @@ var PTI = {
             sheetDiv.style.backgroundColor = sheet.color;
             sheetDiv.style.width = '100vw';
             sheetDiv.style.height = '100vh';
+            sheetDiv.style.transform = 'skew(' + PTI.options.skewX + 'deg,' + PTI.options.skewY + 'deg) scale(' + Math.floor(((PTI.options.skewX/360)+1) + (PTI.options.skewY/360)+1) + ')';
+            console.log('scale(' + Math.floor(((PTI.options.skewX/360)+1) + (PTI.options.skewY/360)+1) + ')');
             if (!inverted) sheetDiv.style.zIndex = sheetCounter-1 + 10;
             
             switch (PTI.options.direction) {

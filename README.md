@@ -33,6 +33,8 @@ This object's properties can be the following, although they are all optional:
 - sheets: An array of sheet objects (more below).
 - generateSheetsPerElement: A boolean value that toggles whether or not to listen to data attributes on HTML (If you set this to false you MUST specify at least one sheet object in the sheets property).
 - transitionTime: The amount of milliseconds you want the animation to last for.
+- skewX: An integer representing the amount of degrees to skew the sheets by in the X axis.
+- skewY: An integer representing the amount of degrees to skew the sheets by in the Y axis.
 
 #### The sheet object
 Sheets are those colored thingies that fly over your screen when you use PTI, you know, the whole reason why you're here. They are usually automatically generated when you specify data-pti-colors, but you can specify them in your options object if you prefer to have all your links use the same sheets.
