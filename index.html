@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Page transition injector</title>
         <link rel="stylesheet" href="css/example.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/a11y-light.min.css">
         <link rel="stylesheet" href="css/page-transition-injector.css">
         <script src="js/page-transition-injector.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
     </head>
     <body>
         <div class="header-container">
@@ -19,11 +21,72 @@
             </div>
         </div>
 
-        <div class="docs-container">
+        <div id="docs-container">
+            <h1 id="page-transition-injector">Page transition injector</h1>
+            <p>A library to generate page transitions painlessly.</p>
+            <h1 id="how-to-use">How to use</h1>
+            <h2 id="install-the-library-in-your-project">Install the library in your project</h2>
+            <ol>
+                <li>Download this repository using either Git or the download as zip button.<br /></li>
+                <li>Save /css/page-transition-injector.css and /js/page-transition-injector.js in your working directory.<br /></li>
+                <li>Import them in your page's head.<br /></li>
+                <li>Add the <code>page-transition</code> class to the elements you want the transition to trigger on.<br /></li>
+                <li>Add a script tag at the end of your page's body.</li>
+            </ol>
+            <pre>
+                <code class="language-html">
+    &lt;script&gt;
+        PTI.init();
+    &lt;/script&gt;
+                </code>
+            </pre>
             
+
+            <h2 id="use-the-library">Use the library</h2>
+            <p>By default, PTI will use HTML data attributes to control its behaviour, you can change this in the configuration object (more info below), or by setting <code>PTI.options.generateSheetsPerElement</code> to <code>false</code> in your script tag (not recommended).</p>
+            <h3 id="html-data-attributes">HTML Data attributes</h3>
+            <ul>
+                <li>data-pti-transition-time: Sets the amount of milliseconds to run the animation for.<br /></li>
+                <li>data-pti-colors: A space separated list of colors that will be used to dynamically generate transition sheets.<br /></li>
+                <li>data-pti-direction: the direction in which the animation will move (up, down, left or right).</li>
+            </ul>
+            <h3 id="the-configuration-object">The configuration object</h3>
+            <p>You can pass a configuration object to the init function when you initialise the library.</p>
+            <p>This object's properties can be the following, although they are all optional:</p>
+            <ul>
+                <li>direction: up, down, left or right.<br /></li>
+                <li>sheets: An array of sheet objects (more below).<br /></li>
+                <li>generateSheetsPerElement: A boolean value that toggles whether or not to listen to data attributes on HTML (If you set this to false you MUST specify at least one sheet object in the sheets property).</li>
+                <li>transitionTime: The amount of milliseconds you want the animation to last for.</li>
+            </ul>
+            <h4 id="the-sheet-object">The sheet object</h4>
+            <p>Sheets are those colored thingies that fly over your screen when you use PTI, you know, the whole reason why you're here. They are usually automatically generated when you specify data-pti-colors, but you can specify them in your options object if you prefer to have all your links use the same sheets.</p>
+            <p>Sheet objects are fairly simple, they only have one property</p>
+            <ul>
+                <li>color: a string with a color value, usually hexadecimal, but you can use rgb functions, just remember not to put spaces in them.</li>
+            </ul>
+            <p>
+                <strong>Configuration object use example:</strong>
+            </p>
+            <pre>
+                <code class="language-js">
+    PTI.init({
+        direction: 'down',
+        sheets: [{
+            color: '#AA0000'
+        }, {
+            color: '#FFFFFF'
+        }]
+        generateSheetsPerElement: false,
+        transitionTime: 2000
+    });
+                </code>
+            </pre>
+            
+
         </div>
-        
         <script>
+            hljs.initHighlightingOnLoad();
             PTI.init({
                 sheets: [
                     {

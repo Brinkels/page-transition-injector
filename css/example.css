@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 .header-container{
@@ -42,6 +43,9 @@ body {
     background-color: #00B4FF;
 }
 
-.docs-container {
-    margin-left: 2rem;    
+#docs-container {
+    max-width: 70rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
 }

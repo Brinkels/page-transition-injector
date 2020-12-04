@@ -32,6 +32,7 @@ This object's properties can be the following, although they are all optional:
 - direction: up, down, left or right.
 - sheets: An array of sheet objects (more below).
 - generateSheetsPerElement: A boolean value that toggles whether or not to listen to data attributes on HTML (If you set this to false you MUST specify at least one sheet object in the sheets property).
+- transitionTime: The amount of milliseconds you want the animation to last for.
 
 #### The sheet object
 Sheets are those colored thingies that fly over your screen when you use PTI, you know, the whole reason why you're here. They are usually automatically generated when you specify data-pti-colors, but you can specify them in your options object if you prefer to have all your links use the same sheets.
@@ -47,7 +48,7 @@ Sheet objects are fairly simple, they only have one property
             color: '#AA0000'
         }, {
             color: '#FFFFFF'
-        }]
+        }],
         generateSheetsPerElement: false
     });
 ```
