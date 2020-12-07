@@ -60,7 +60,7 @@ var PTI = {
         sheets.forEach(sheet => {
             sheetCounter++;
             let sheetDiv = document.createElement('div');
-            sheetDiv.style.backgroundColor = sheet.color;
+            sheetDiv.style.background = sheet.color;
             sheetDiv.style.width = '100vw';
             sheetDiv.style.height = '100vh';
             sheetDiv.style.transform = 'skew(' + PTI.options.skewX + 'deg,' + PTI.options.skewY + 'deg) scale(' + Math.floor(((PTI.options.skewX/360)+1) + (PTI.options.skewY/360)+1) + ')';
