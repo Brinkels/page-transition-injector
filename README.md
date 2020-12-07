@@ -40,7 +40,7 @@ This object's properties can be the following, although they are all optional:
 Sheets are those colored thingies that fly over your screen when you use PTI, you know, the whole reason why you're here. They are usually automatically generated when you specify data-pti-colors, but you can specify them in your options object if you prefer to have all your links use the same sheets.
 
 Sheet objects are fairly simple, they only have one property
-- color: a string with a color value, usually hexadecimal, but you can use rgb functions, just remember not to put spaces in them.
+- color: a string with a color value or a background function (such as `url()` or `linear-gradient()`).
 
 **Configuration object use example:**
 ```Js
